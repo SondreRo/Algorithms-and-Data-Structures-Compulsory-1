@@ -2,21 +2,23 @@
 //
 
 #include <iostream>
+
 using namespace std;
 
 //Input
-int MyInput;
+uint64_t MyInput;
 //Factorial
-int TempNumber = 1;
+uint64_t TempNumber;
 //Fibonacci
-int FibNumber = 1;
-int n = 0;
-int n1 = 1;
-int n2 = 0;
+uint64_t FibNumber;
+uint64_t n;
+uint64_t n1;
+uint64_t n2;
 
-int Factorial(int n)
+uint64_t Factorial(uint64_t n)
 {
-    if (n > 1) {
+    cout << TempNumber << "\n";
+    if (n > 2) {
 
         TempNumber *= n;
         Factorial(n - 1);
@@ -27,7 +29,7 @@ int Factorial(int n)
     }
 }
 
-void Fibonacci(int n)
+void Fibonacci(uint64_t n)
 {
     if (n < 2)
     {  
@@ -50,7 +52,10 @@ void FactorialManager()
     cout << "Factorial: \n";
     cout << "Give me a number pls: ";
     cin >> MyInput;
-    cout << "Your number is: " << Factorial(MyInput);
+    if (MyInput > 0) {
+        cout << "Your number is: " << Factorial(MyInput);
+    }
+  
 }
 
 void FibonacciManager()
@@ -60,13 +65,23 @@ void FibonacciManager()
     cin >> MyInput;
     cout << "\n";
     cout << "0\n";
-    Fibonacci(MyInput);
+    if (MyInput > 0) {
+        Fibonacci(MyInput);
+    }
+  
 }
 
 
 
 int main()
 {
+    MyInput;
+    TempNumber = 1;
+    FibNumber = 1;
+    n = 0;
+    n1 = 1;
+    n2 = 0;
+
     cout << "1 For Fibonacci. \n";
     cout << "2 For Factorial. \n";
     cout << "3 To Clear the terminal. \n";
@@ -84,10 +99,16 @@ int main()
     else if (MyInput == 3)
     {
         system("cls");
-        main();
+        return main();
     }
+    
+   
        
     cout << "\n" << "Restarting:" << "\n";
-    main();
+   
     
+   
+    return main();
+    
+
 }
